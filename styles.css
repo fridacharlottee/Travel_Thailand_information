@@ -1,0 +1,369 @@
+/* Grundläggande reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f7f7f7; /* Ljus bakgrund */
+    line-height: 1.6;
+}
+
+/* --- Globala Element --- */
+
+a {
+    text-decoration: none;
+    color: #0077b6; /* Lätt turkost/blått */
+}
+
+a:hover {
+    color: #00b4d8; /* Ljusare turkost */
+}
+
+.btn-book, .btn-explore, .btn-info {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-book {
+    background-color: #ffb703; /* Sandgul/orange */
+    color: #333;
+}
+
+.btn-book:hover {
+    background-color: #fb8500; /* Mörkare orange */
+}
+
+.btn-explore {
+    background-color: #0096c7; /* Ljust havsblått */
+    color: white;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.btn-explore:hover {
+    background-color: #0077b6;
+}
+
+.btn-info {
+    background-color: #8338ec; /* En touch av lila/exotiskt */
+    color: white;
+    margin-top: 15px;
+}
+
+.btn-info:hover {
+    background-color: #6a0dad;
+}
+
+/* --- Header & Navigation --- */
+
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px 5%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #fb8500; /* Solfärgad logga */
+    font-weight: 700;
+    font-size: 1.8em;
+}
+
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.desktop-nav ul li {
+    margin-left: 25px;
+}
+
+.desktop-nav ul li a {
+    color: #333;
+    font-weight: 600;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.hamburger-menu {
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #00b4d8;
+    display: none; /* Dold på stora skärmar */
+}
+
+/* Mobil meny (dold som standard) */
+.mobile-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav.active {
+    display: block; /* Visas när den aktiveras av JavaScript */
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 10px 5%;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-weight: 600;
+}
+
+/* --- Hero Sektion (Huvudbild) --- */
+
+.hero-image-section {
+    background: url('https://picsum.photos/1200/600/?random=1&tag=beach,thailand') no-repeat center center/cover;
+    height: 60vh; /* Anpassa höjden */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-image-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Mörk överlagring för textläsbarhet */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+/* --- Recensionssektionen --- */
+
+.reviews-section {
+    text-align: center;
+    padding: 40px 5%;
+    background-color: white;
+}
+
+.reviews-section h3 {
+    font-size: 1.8em;
+    color: #0077b6;
+    margin-bottom: 30px;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.review-card {
+    background-color: #e6f7ff; /* Mycket ljusblå bakgrund */
+    border: 1px solid #b3e0ff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stars {
+    color: #ffb703; /* Guldfärgade stjärnor */
+    font-size: 1.5em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+/* --- Feature Sektion (Andra bilden) --- */
+
+.feature-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 5%;
+    gap: 40px;
+}
+
+.feature-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.feature-content h2 {
+    color: #fb8500;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.feature-content ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.feature-content ul li {
+    padding: 8px 0;
+    font-size: 1.1em;
+}
+
+.feature-content ul li i {
+    color: #0096c7;
+    margin-right: 10px;
+}
+
+.feature-image {
+    flex: 1;
+    min-width: 300px;
+    height: 400px;
+    background: url('https://picsum.photos/600/400/?random=2&tag=temple,thailand') no-repeat center center/cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Footer --- */
+
+footer {
+    background-color: #0077b6; /* Havsblå footer */
+    color: white;
+    padding: 30px 5%;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 15px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5em;
+    margin-left: 15px;
+}
+
+.social-links a:hover {
+    color: #ffb703;
+}
+
+.footer-nav a {
+    color: white;
+    margin: 0 10px;
+}
+
+.footer-nav a:hover {
+    color: #ffb703;
+}
+
+/* --- Media Queries (Responsivitet) --- */
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .header-content {
+        padding: 5px 0;
+    }
+    
+    .logo {
+        font-size: 1.5em;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+    }
+    
+    .reviews-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .review-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .feature-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-image {
+        width: 100%;
+        height: 300px;
+    }
+
+    .feature-content ul {
+        text-align: left;
+        max-width: 400px;
+        margin: 20px auto;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social-links {
+        margin-top: 10px;
+    }
+}

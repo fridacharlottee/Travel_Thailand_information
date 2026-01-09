@@ -140,7 +140,8 @@ header {
 /* --- Hero Sektion (Huvudbild) --- */
 
 .hero-image-section {
-    background: url('https://picsum.photos/1200/600/?random=1&tag=beach,thailand') no-repeat center center/cover;
+    /* Ändrad bild: Vacker strand på Koh Phi Phi, Thailand */
+    background: url('https://images.unsplash.com/photo-1541336471923-d6480a49806c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
     height: 60vh; /* Anpassa höjden */
     display: flex;
     align-items: center;
@@ -263,7 +264,8 @@ header {
     flex: 1;
     min-width: 300px;
     height: 400px;
-    background: url('https://picsum.photos/600/400/?random=2&tag=temple,thailand') no-repeat center center/cover;
+    /* Ändrad bild: Buddhiskt tempel i Thailand */
+    background: url('https://images.unsplash.com/photo-1596701082522-d0b833215243?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }

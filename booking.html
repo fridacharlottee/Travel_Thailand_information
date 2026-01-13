@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boka din resa | Travel Thailand</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .booking-container {
+            max-width: 800px;
+            margin: -50px auto 50px; /* Drar upp formuläret lite över herosektionen */
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 20;
+        }
+        .booking-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-full { grid-column: span 2; }
+        .booking-form label { display: block; margin-bottom: 8px; font-weight: 600; color: #0077b6; }
+        .booking-form input, .booking-form select, .booking-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+        @media (max-width: 600px) {
+            .booking-form { grid-template-columns: 1fr; }
+            .form-full { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1 class="logo"><a href="index.html" style="color: #fb8500;">Travel Thailand</a></h1>
+            <div class="hamburger-menu" id="hamburger-menu"><i class="fas fa-bars"></i></div>
+            <nav class="mobile-nav" id="mobile-nav">
+                <ul>
+                    <li><a href="about.html">Om oss</a></li>
+                    <li><a href="destinations.html">Våra destinationer</a></li>
+                    <li><a href="contact.html">Kontakta Oss</a></li>
+                    <li><a href="booking.html">Boka Resa</a></li>
+                </ul>
+            </nav>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="about.html">Om oss</a></li>
+                    <li><a href="destinations.html">Våra destinationer</a></li>
+                    <li><a href="contact.html">Kontakta Oss</a></li>
+                    <li><a href="booking.html" class="btn-book">Boka Resa</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-image-section" style="height: 40vh; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Thaibild.jpg');">
+            <div class="hero-content">
+                <h2>Boka ditt äventyr</h2>
+                <p>Fyll i dina önskemål så skräddarsyr vi din drömresa</p>
+            </div>
+        </section>
+
+        <div class="booking-container">
+            <form action="https://formspree.io/f/DIN_FORM_ID" method="POST" class="booking-form">
+                
+                <div class="form-full">
+                    <label>Vart vill du åka?</label>
+                    <select name="destination" required>
+                        <option value="">Välj en destination...</option>
+                        <option value="Phuket">Phuket</option>
+                        <option value="Krabi">Krabi & Ao Nang</option>
+                        <option value="Bangkok">Bangkok</option>
+                        <option value="Koh Lanta">Koh Lanta</option>
+                        <option value="Koh Phi Phi">Koh Phi Phi</option>
+                        <option value="Koh Samui">Koh Samui</option>
+                        <option value="Chiang Mai">Chiang Mai</option>
+                        <option value="Khao Lak">Khao Lak</option>
+                        <option value="Koh Phangan">Koh Phangan</option>
+                        <option value="Koh Lipe">Koh Lipe</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Avresa</label>
+                    <input type="date" name="departure-date" required>
+                </div>
+                <div>
+                    <label>Hemresa</label>
+                    <input type="date" name="return-date" required>
+                </div>
+
+                <div>
+                    <label>Antal vuxna</label>
+                    <input type="number" name="adults" min="1" value="2" required>
+                </div>
+                <div>
+                    <label>Antal barn</label>
+                    <input type="number" name="children" min="0" value="0">
+                </div>
+
+                <div class="form-full">
+                    <label>Ditt namn</label>
+                    <input type="text" name="name" placeholder="För- och efternamn" required>
+                </div>
+                <div class="form-full">
+                    <label>E-postadress</label>
+                    <input type="email" name="email" placeholder="din@epost.se" required>
+                </div>
+
+                <div class="form-full">
+                    <label>Övriga önskemål (t.ex. hotellstandard, utflykter)</label>
+                    <textarea name="message" rows="4" placeholder="Berätta lite mer om vad du söker..."></textarea>
+                </div>
+
+                <div class="form-full">
+                    <button type="submit" class="btn-submit" style="background-color: #fb8500; color: white; border: none; padding: 15px; width: 100%; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 1.1em;">Skicka bokningsförfrågan</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Travel Thailand | Din guide till paradiset</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger-menu');
+        const mobileNav = document.getElementById('mobile-nav');
+        if (hamburger && mobileNav) {
+            hamburger.addEventListener('click', () => {
+                mobileNav.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

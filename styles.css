@@ -141,10 +141,12 @@ header {
 
 /* --- Hero Sektion (Huvudbild) --- */
 
+/* --- Hero Sektion (Huvudbild) --- */
+
 .hero-image-section {
-    /* Här har vi nu din bild istället för Unsplash-länken */
+    /* Vi använder nu filnamnet direkt eftersom den inte ligger i en mapp */
     background: url('Thaibild.jpg') no-repeat center center/cover;
-    height: 60vh; /* Anpassa höjden */
+    height: 60vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,7 +162,7 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Mörk överlagring för textläsbarhet */
+    background: rgba(0, 0, 0, 0.4); 
 }
 .hero-content {
     position: relative;

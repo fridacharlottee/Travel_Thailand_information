@@ -81,6 +81,16 @@
             </div>
         </div>
     </footer>
+<script>
+    const hamburger = document.getElementById('hamburger-menu');
+    const mobileNav = document.getElementById('mobile-nav');
 
+    // Kontrollera att elementen finns innan vi lägger till klick-funktionen
+    if (hamburger && mobileNav) {
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+    }
+</script>
 </body>
 </html>

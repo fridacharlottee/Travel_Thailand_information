@@ -348,5 +348,26 @@ footer {
 
     .social-links {
         margin-top: 10px;
+
+        .destination-item {
+    display: flex; /* Detta lägger dem bredvid varandra */
+    align-items: center;
+    background: white;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.dest-image {
+    flex: 1; /* Gör att bilden tar halva platsen */
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.dest-text {
+    flex: 1; /* Gör att texten tar halva platsen */
+    padding: 40px;
+}
     }
 }

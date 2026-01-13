@@ -13,6 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function() {
             if (mobileMenu.classList.contains('active')) {
                 mobileMenu.classList.remove('active');
+
+                <script>
+    const hamburger = document.getElementById('hamburger-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    hamburger.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
+    });
+</script>
             }
         });
     });

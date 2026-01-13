@@ -349,54 +349,56 @@ footer {
     .social-links {
         margin-top: 10px;
 <style>
-    .destinations-list {
-        max-width: 1100px;
-        margin: 40px auto;
-        padding: 0 5%;
-    }
+    /* Stil för destinationssidan */
+.destinations-list {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 5%;
+}
 
+.destination-item {
+    display: flex; /* Detta lägger bild och text bredvid varandra */
+    align-items: stretch; /* Gör att bild och text blir lika höga */
+    background: white;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.dest-image {
+    flex: 1; /* Bilden tar upp hälften av utrymmet */
+    min-height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dest-text {
+    flex: 1; /* Texten tar upp andra hälften */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.destination-item h3 {
+    color: #0077b6;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Mobilanpassning - viktigt för Mac/iPhone-användare */
+@media (max-width: 768px) {
     .destination-item {
-        display: flex; /* Lägger bild och text bredvid varandra */
-        align-items: center;
-        background: white;
-        margin-bottom: 40px;
-        border-radius: 15px;
-        overflow: hidden; /* Ser till att bildens hörn också blir runda */
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        flex-direction: column; /* Staplar bild och text på högkant i mobilen */
     }
-
+    
     .dest-image {
-        flex: 1; /* Bilden tar upp hälften av utrymmet */
-        min-height: 300px;
-        background-size: cover;
-        background-position: center;
+        width: 100%;
+        min-height: 250px;
     }
-
-    .dest-text {
-        flex: 1; /* Texten tar upp andra hälften */
-        padding: 40px;
-    }
-
-    .destination-item h3 {
-        color: #0077b6;
-        margin-bottom: 15px;
-    }
-
-    .destination-item span {
-        color: #fb8500;
-        margin-right: 5px;
-    }
-
-    /* Mobilanpassning: Bilden hamnar över texten på små skärmar */
-    @media (max-width: 768px) {
-        .destination-item {
-            flex-direction: column;
-        }
-        .dest-image {
-            width: 100%;
-            min-height: 200px;
-        }
-    }
+}
 </style>
 }
     }

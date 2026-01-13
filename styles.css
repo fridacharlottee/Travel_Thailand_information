@@ -224,7 +224,32 @@ header {
     font-style: italic;
     margin-bottom: 15px;
 }
+/* --- Feature Sektion (Andra bilden) --- */
 
+.feature-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 5%;
+    gap: 40px;
+}
+
+.feature-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.feature-image {
+    flex: 1;
+    min-width: 300px;
+    height: 400px;
+    /* Här läggs din bild watpho.jpg in */
+    background: url('watpho.jpg') no-repeat center center/cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
 
 /* --- Footer --- */
 
